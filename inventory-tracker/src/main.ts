@@ -1,3 +1,4 @@
+// importing all the classes and functions
 import { PhysicalProduct } from "./models/PhysicalProduct.ts";
 import { DigitalProduct } from "./models/DigitalProduct.ts";
 import { calculateTax } from "./utils/taxCalculator.ts";
@@ -18,7 +19,7 @@ const products: Product[] = [
 for (const product of products) {
   console.log(product.displayDetails());
 
-  // If it's a physical product, show weight
+  // If it's a physical product, show weight, quantity
   if (product instanceof PhysicalProduct) {
     console.log(`Weight: ${product.formattedWeight}`);
     console.log(`Quantity: ${product.physicalProductQuantity}`);
@@ -29,19 +30,20 @@ for (const product of products) {
   if (product instanceof DigitalProduct) {
     console.log(`File Size: ${product.formattedFileSize}`);
   }
-
+//calculate tax
   console.log(`Price with Tax: $${calculateTax(product).toFixed(2)}`);
   console.log("-------------------------");
 }
 
 //sorting
-
+//sort by price
 console.log("\n SORTED BY PRICE ");
 console.log("----------------");
 sortByPrice(products).forEach(p =>
   console.log(`${p.name}: $${p.price}`)
 );
 
+//sort by name
 console.log("\n SORTED BY NAME ");
 console.log("---------------");
 sortByName(products).forEach((p) => console.log(p.name));

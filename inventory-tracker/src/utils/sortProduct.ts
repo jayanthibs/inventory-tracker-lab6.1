@@ -1,8 +1,15 @@
+//importing Product class to inherit it's properties
 import { Product } from "../models/Product.ts";
+
+
+// another way of sorting using sort builtin method
 
 // export function sortByPrice(products: Product[]): Product[] {
 //   return [...products].sort((a, b) => a.price - b.price);
 // }
+
+
+//sorting products based on the price in ascending order
 export function sortByPrice(products: Product[]): Product[] {
   const sorted = [...products];
 
@@ -24,7 +31,7 @@ export function sortByPrice(products: Product[]): Product[] {
 }
 
 
-
+//sorting products based on the name in alphabetical order
 
 export function sortByName(products: Product[]): Product[] {
   return [...products].sort((a, b) => a.name.localeCompare(b.name));
